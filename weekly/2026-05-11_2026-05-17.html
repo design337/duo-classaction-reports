@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>듀오집단소송 광고 성과 주간 보고서 (5/11~5/17)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans KR', 'Noto Sans CJK KR', -apple-system, sans-serif;
+  font-size: 9pt;
+  line-height: 1.55;
+  color: #1E293B;
+  background: #FFFFFF;
+}
+.page-wrap { max-width: 900px; margin: 0 auto; padding: 24px 18px; }
+@page { size: A4; margin: 14mm 12mm 16mm 12mm; }
+@page :first { margin: 0; }
+
+/* ---- Cover ---- */
+.cover {
+  page-break-after: always;
+  break-after: page;
+  background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+  color: #FFFFFF;
+  padding: 48px 36px;
+  border-radius: 8px;
+  margin-bottom: 28px;
+}
+.cover .wf-tag,
+.cover .mode-badge {
+  display: inline-block;
+  padding: 3px 11px;
+  border-radius: 12px;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+.cover .wf-tag { background: rgba(123,104,174,0.20); color: #D6CEF0; margin-bottom: 6px; }
+.cover .mode-badge { background: rgba(59,130,246,0.20); color: #BFD7FF; margin-left: 6px; margin-bottom: 6px; }
+.cover h1 {
+  margin: 6px 0 4px;
+  font-size: 28pt;
+  font-weight: 900;
+  letter-spacing: -0.6px;
+  color: #FFFFFF;
+}
+.cover .subtitle { font-size: 12pt; font-weight: 300; color: #CBD5E1; margin-bottom: 14px; }
+.cover .divider {
+  width: 48px;
+  height: 2px;
+  background: #7B68AE;
+  margin: 14px 0 22px;
+}
+.cover .kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 20px 0 18px;
+}
+.cover .kpi-cover {
+  background: rgba(255,255,255,0.06);
+  border-left: 3px solid #7B68AE;
+  padding: 10px 12px;
+  border-radius: 0 4px 4px 0;
+}
+.cover .kpi-cover .label { font-size: 6.5pt; color: #94A3B8; font-weight: 500; letter-spacing: 0.4px; }
+.cover .kpi-cover .value { font-size: 15pt; font-weight: 700; color: #FFFFFF; margin-top: 2px; }
+.cover .kpi-cover .unit  { font-size: 7.5pt; font-weight: 400; color: #CBD5E1; }
+.cover .meta { font-size: 7.5pt; color: #94A3B8; margin-top: 14px; }
+
+/* ---- TOC ---- */
+.toc {
+  page-break-after: always;
+  break-after: page;
+  padding: 12px 4px 24px;
+}
+.toc h2 {
+  font-size: 13pt;
+  font-weight: 700;
+  color: #1E293B;
+  border-bottom: 2px solid #7B68AE;
+  padding-bottom: 6px;
+  margin-bottom: 14px;
+}
+.toc ol { margin: 0; padding-left: 20px; }
+.toc li { margin: 4px 0; font-size: 9.5pt; color: #5A6478; }
+.toc li strong { color: #1E293B; }
+
+/* ---- Section header (dark box) ---- */
+.section {
+  page-break-inside: avoid;
+  break-inside: avoid;
+  margin: 22px 0 12px;
+}
+.section-header {
+  background: #1E293B;
+  padding: 10px 14px;
+  border-radius: 4px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.section-header .sec-num {
+  color: #7B68AE;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.section-header .sec-title {
+  color: #FFFFFF;
+  font-size: 11pt;
+  font-weight: 700;
+}
+.section-header .sec-subtitle {
+  color: #CBD5E1;
+  font-size: 8pt;
+  font-weight: 400;
+}
+.section-body { padding: 12px 4px 6px; }
+
+/* ---- KPI cards (in body) ---- */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 10px 0 14px;
+}
+.kpi-card {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-left: 3px solid #7B68AE;
+  padding: 10px 12px;
+  border-radius: 4px;
+}
+.kpi-card .label { font-size: 7pt; color: #5A6478; font-weight: 500; letter-spacing: 0.4px; }
+.kpi-card .value { font-size: 14pt; font-weight: 700; color: #1E293B; margin-top: 2px; }
+.kpi-card .unit  { font-size: 7.5pt; font-weight: 400; color: #94A3B8; margin-top: 1px; }
+.kpi-card .delta { display: inline-block; margin-left: 4px; font-size: 7.5pt; font-weight: 700; }
+
+/* ---- Tables ---- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8pt;
+  margin: 6px 0 12px;
+  page-break-inside: avoid;
+}
+thead th {
+  background: #334155;
+  color: #FFFFFF;
+  font-size: 7.5pt;
+  font-weight: 600;
+  padding: 6px 8px;
+  text-align: left;
+  letter-spacing: 0.2px;
+}
+tbody td {
+  padding: 5px 8px;
+  border-bottom: 1px solid #E2E8F0;
+  color: #1E293B;
+  vertical-align: middle;
+}
+tbody tr:nth-child(odd)  td { background: #FFFFFF; }
+tbody tr:nth-child(even) td { background: #F8FAFC; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr.total td {
+  background: #1E293B !important;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* ---- Delta ---- */
+.up   { color: #C0392B; font-weight: 700; }
+.down { color: #1E3A8A; font-weight: 700; }
+.up-bad   { color: #C0392B; font-weight: 700; }
+.flat { color: #94A3B8; }
+.delta-note { font-size: 7pt; color: #94A3B8; font-style: italic; margin-left: 4px; }
+
+/* ---- Boxes ---- */
+.callout {
+  background: #E8E4F2;
+  border-left: 3px solid #7B68AE;
+  padding: 10px 14px;
+  border-radius: 0 4px 4px 0;
+  margin: 8px 0 12px;
+  font-size: 8.5pt;
+  line-height: 1.7;
+}
+.callout strong { color: #5B4894; }
+.callout .title { font-size: 9pt; font-weight: 700; color: #5B4894; display: block; margin-bottom: 4px; }
+.callout-red {
+  background: #FDF0EE;
+  border-left: 3px solid #C0392B;
+  padding: 9px 12px;
+  margin: 8px 0;
+  border-radius: 0 4px 4px 0;
+  font-size: 8.5pt;
+}
+.callout-red .title { color: #C0392B; font-weight: 700; }
+.callout-green {
+  background: #EAF4EE;
+  border-left: 3px solid #1A6644;
+  padding: 9px 12px;
+  margin: 8px 0;
+  border-radius: 0 4px 4px 0;
+  font-size: 8.5pt;
+}
+.callout-green .title { color: #1A6644; font-weight: 700; }
+
+/* ---- Tags / priorities ---- */
+.tag {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 10px;
+  font-size: 7pt;
+  font-weight: 700;
+  margin-right: 4px;
+  letter-spacing: 0.3px;
+}
+.tag.p1 { background: #FDF0EE; color: #C0392B; }
+.tag.p2 { background: #FEF3C7; color: #B45309; }
+.tag.p3 { background: #E8E4F2; color: #5B4894; }
+.tag.meta  { background: #E8E4F2; color: #5B4894; }
+.tag.naver { background: #EAF4EE; color: #1A6644; }
+.tag.ga    { background: #DBEAFE; color: #1E40AF; }
+
+/* ---- Misc ---- */
+p { margin: 4px 0; }
+.note-empty { color: #94A3B8; font-size: 8pt; font-style: italic; }
+.section-narrative { font-size: 8.5pt; color: #5A6478; margin: 6px 0 10px; line-height: 1.7; }
+.divider-soft { border: 0; border-top: 1px solid #E2E8F0; margin: 16px 0; }
+
+/* ---- Footer ---- */
+.footer {
+  border-top: 1px solid #E2E8F0;
+  text-align: center;
+  margin-top: 28px;
+  padding: 14px 0 6px;
+  color: #94A3B8;
+  font-size: 6.5pt;
+  letter-spacing: 0.3px;
+}
+.footer .pgnum { margin-left: 6px; }
+
+@media print {
+  body { background: #FFFFFF; }
+  .page-wrap { padding: 0; max-width: 100%; }
+  .cover, .section-header, thead th, tr.total td, .callout, .callout-red, .callout-green, .kpi-card {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+<div class="cover">
+  <div>
+    <span class="wf-tag">DUO · 개인정보 유출 소송</span>
+    <span class="mode-badge">주간 보고서</span>
+  </div>
+  <h1>광고 성과 주간 분석</h1>
+  <div class="subtitle">데이터 기간 · 5/11 ~ 5/17 (7일)</div>
+  <div class="divider"></div>
+  <div class="kpi-row">
+    <div class="kpi-cover">
+      <div class="label">총 광고비</div>
+      <div class="value">₩1,148,520</div>
+      <div class="unit">메타 + 네이버SA</div>
+    </div>
+    <div class="kpi-cover">
+      <div class="label">총 노출 / 클릭</div>
+      <div class="value">234,490 <span style="font-size:9pt;color:#94A3B8;">/ 10,132</span></div>
+      <div class="unit">CTR 4.32%</div>
+    </div>
+    <div class="kpi-cover">
+      <div class="label">평균 CPC</div>
+      <div class="value">₩113</div>
+      <div class="unit">광고비 ÷ 클릭</div>
+    </div>
+    <div class="kpi-cover">
+      <div class="label">신청 전환</div>
+      <div class="value">541</div>
+      <div class="unit">GA4 집단소송 신청</div>
+    </div>
+  </div>
+  <div class="meta">캠페인 시작일 2026-04-23 · 캠페인 25일차 · 본 보고서는 5/11 ~ 5/17 (7일) 기준</div>
+</div><div class="toc"><h2>목차 / Contents</h2><ol><li><strong>S1 · 핵심 결론 (Executive Summary)</strong></li><li><strong>S2 · 주간 KPI 스냅샷</strong></li><li><strong>S3 · 채널별 종합 분석</strong></li><li><strong>S4 · 일별 추이</strong></li><li><strong>S5 · GA4 전환 분석</strong></li><li><strong>S6 · 참여·이탈 심층 진단</strong></li><li><strong>S7 · 인사이트 (IF–THEN–BECAUSE)</strong></li><li><strong>S8 · 액션 플랜</strong></li></ol></div>
+<div class="section">
+  <div class="section-header">
+    <span class="sec-num">SECTION 01</span>
+    <span class="sec-title">핵심 결론</span>
+    <span class="sec-subtitle">Executive Summary</span>
+  </div>
+  <div class="section-body"><div class="callout"><span class="title">S1. 주간 결론 (2026-05-11 ~ 2026-05-17)</span>주간(5/11~5/17) 핵심 흐름: 5/14 신청 71건 정점 후 5/17 45건으로 -37% 정체, 메타 참여율 6일 연속 하락 패턴 형성. 전주(5/4~5/10) 대비 핵심 변화 3가지: (1) 5/15~5/16 duo_700+/now/story 머신러닝 광고 3종 종료 후 5/17부터 duo_700+story + duo_10000 + 머신러닝(25-) 중심으로 재편, (2) 네이버SA 캠페인 CPC 5/17 ₩1,316으로 -45% 개선되었으나 여전히 메타 평균 CPC 대비 15.5배 격차, (3) 네이버 신규 검색어 18종 중 클릭 1건으로 검색어 확장 효율 저하 신호.</div><table>
+    <thead><tr><th>지표</th><th class="num">금주</th><th class="num">전주</th><th class="num">증감</th></tr></thead>
+    <tbody>
+      <tr><td>광고비</td><td class="num">₩1,148,520</td><td class="num">₩846,573</td><td class="num"><span class="up">▲35.7%</span></td></tr>
+      <tr><td>클릭</td><td class="num">10,132</td><td class="num">7,786</td><td class="num"><span class="up">▲30.1%</span></td></tr>
+      <tr><td>CTR</td><td class="num">4.32%</td><td class="num">3.87%</td><td class="num"><span class="up">▲11.8%</span></td></tr>
+      <tr><td>CPC</td><td class="num">₩113</td><td class="num">₩109</td><td class="num"><span class="up">▲4.3%</span></td></tr>
+      <tr><td>총 사용자</td><td class="num">37,591</td><td class="num">24,367</td><td class="num"><span class="up">▲54.3%</span></td></tr>
+      <tr><td>참여율</td><td class="num">18.10%</td><td class="num">20.79%</td><td class="num"><span class="down">▼12.9%</span></td></tr>
+      <tr><td>이탈률</td><td class="num">81.90%</td><td class="num">79.21%</td><td class="num"><span class="up">▲3.4% (부정)</span></td></tr>
+      <tr><td>신청 전환</td><td class="num">541</td><td class="num">368</td><td class="num"><span class="up">▲47.0%</span></td></tr>
+    </tbody>
+  </table><p class="delta-note">증감: 상승 ▲ 빨강 · 하락 ▼ 파랑. 이탈률 ▲ 상승은 부정적 신호.</p></div></div>
+<div class="section">
+  <div class="section-header">
+    <span class="sec-num">SECTION 02</span>
+    <span class="sec-title">주간 KPI 스냅샷</span>
+    <span class="sec-subtitle">핵심 4개 카드</span>
+  </div>
+  <div class="section-body"><div class="kpi-grid">
+    <div class="kpi-card">
+    <div class="label">주간 광고비</div>
+    <div class="value">₩1,148,520<span class="delta"><span class="up">▲35.7%</span></span></div>
+  </div>
+    <div class="kpi-card">
+    <div class="label">주간 클릭</div>
+    <div class="value">10,132<span class="delta"><span class="up">▲30.1%</span></span></div>
+  </div>
+    <div class="kpi-card">
+    <div class="label">주간 CTR</div>
+    <div class="value">4.32%<span class="delta"><span class="up">▲11.8%</span></span></div>
+  </div>
+    <div class="kpi-card">
+    <div class="label">주간 전환</div>
+    <div class="value">541<span class="delta"><span class="up">▲47.0%</span></span></div>
+  </div>
+  </div><div class="kpi-grid">
+    <div class="kpi-card">
+    <div class="label">총 사용자</div>
+    <div class="value">37,591<span class="delta"><span class="up">▲54.3%</span></span></div>
+  </div>
+    <div class="kpi-card">
+    <div class="label">참여율</div>
+    <div class="value">18.10%<span class="delta"><span class="down">▼12.9%</span></span></div>
+  </div>
+    <div class="kpi-card">
+    <div class="label">이탈률</div>
+    <div class="value">81.90%<span class="delta"><span class="up">▲3.4% (부정)</span></span></div>
+  </div>
+    <div class="kpi-card">
+    <div class="label">평균 CPC</div>
+    <div class="value">₩113<span class="delta"><span class="up">▲4.3%</span></span></div>
+  </div>
+  </div></div></div>
+<div class="section">
+  <div class="section-header">
+    <span class="sec-num">SECTION 03</span>
+    <span class="sec-title">채널별 종합 분석</span>
+    <span class="sec-subtitle">메타 · 네이버SA · GA</span>
+  </div>
+  <div class="section-body"><table>
+    <thead><tr>
+      <th>채널</th>
+      <th class="num">광고비</th>
+      <th class="num">노출</th>
+      <th class="num">클릭</th>
+      <th class="num">CTR</th>
+      <th class="num">CPC</th>
+      <th class="num">총사용자</th>
+      <th class="num">참여율</th>
+      <th class="num">이탈률</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+    <td><strong>메타</strong></td>
+    <td class="num">₩920,256</td>
+    <td class="num">230,762</td>
+    <td class="num">9,897</td>
+    <td class="num">4.29% <span style="font-size:7pt;"><span class="up">▲13.1%</span></span></td>
+    <td class="num">₩93 <span style="font-size:7pt;"><span class="flat">±0.0%</span></span></td>
+    <td class="num">36,166</td>
+    <td class="num">16.38%</td>
+    <td class="num">83.62%</td>
+  </tr>
+      <tr>
+    <td><strong>네이버SA</strong></td>
+    <td class="num">₩228,264</td>
+    <td class="num">3,728</td>
+    <td class="num">235</td>
+    <td class="num">6.30% <span style="font-size:7pt;"><span class="down">▼34.8%</span></span></td>
+    <td class="num">₩971 <span style="font-size:7pt;"><span class="up">▲64.6%</span></span></td>
+    <td class="num">1,425</td>
+    <td class="num">78.95%</td>
+    <td class="num">21.05%</td>
+  </tr>
+      <tr class="total">
+    <td>전체</td>
+    <td class="num">₩1,148,520</td>
+    <td class="num">234,490</td>
+    <td class="num">10,132</td>
+    <td class="num">4.32%</td>
+    <td class="num">₩113</td>
+    <td class="num">37,591</td>
+    <td class="num">18.10%</td>
+    <td class="num">81.90%</td>
+  </tr>
+    </tbody>
+  </table><div class="callout"><span class="title"><span class="tag meta">메타</span> 채널 진단</span>주중 평균 일일 신청 추정 50건대(5/14 71건 정점·5/17 45건 저점). 핵심 액티브 광고 변화: 5/11~5/14 duo_10000_0427 + duo_700+/now/story_260513(머신러닝 25~)·duo_1차_슬라이드_0423 다채널 운영 → 5/15~5/16 duo_700+/now/story 3종 종료 → 5/17부터 duo_700+story_260513(머신러닝 25-) + duo_10000_0427 + 듀오_1차_슬라이드 중심 단순화. 6일 연속 참여율 하락 추세 — 동일 크리에이티브 노출 누적으로 인한 광고 피로도 의심(추정컨대). duo_700+story_260513은 5/17 CPC ₩68로 비용 효율 최우수.</div><div class="callout"><span class="title"><span class="tag naver">네이버SA</span> 채널 진단</span>주간 캠페인 CPC 5/17 기준 ₩1,316로 전주 대비 -45% 개선 추세 진행. 그러나 메타 평균 CPC(주간 추정 ₩80~100대) 대비 15.5배 절대 격차 — 동일 신청 1건당 비용이 네이버가 메타의 약 15배 수준. 키워드 효율 분화 진행 — 듀오집단소송 등 일반 키워드는 ₩1,500+ 고가, 듀오개인정보소송·듀오유출소송 등 핵심 의도 키워드는 ₩77~59 저가. 5/17 신규 검색어 18종 등장했으나 그 중 클릭은 단 1건(전환 0)으로 검색어 확장 후 유효 트래픽 전환율 낮음.</div><div class="callout"><span class="title"><span class="tag ga">GA</span> 채널 진단</span>주간 신청 추세: 5/14 71건 정점 → 5/15~5/17 하락 후 45건대 정체. 정점일(5/14)과 정체일(5/17) 격차 26건. 채널별 기여도(주간 평균 추정): 메타가 50%+, 네이버 SA 15~20%, direct/organic 합산 25%, 기타(referral/alimtalk) 5~10%. 02.듀오 집단소송 접수 완료 이벤트는 주간 일관되게 Naver sa_pc 채널에서 발생 — sa_pc는 PC 검색이라 데스크탑에서 접수 절차 진행하는 사용자 패턴 추정. 5/15~5/16 메타 광고 3종 종료 시점과 신청 하락 시점이 일치 — 광고 종료가 정체의 주요 원인 가능성.</div></div></div>
+<div class="section">
+  <div class="section-header">
+    <span class="sec-num">SECTION 04</span>
+    <span class="sec-title">일별 추이</span>
+    <span class="sec-subtitle">7일 시계열</span>
+  </div>
+  <div class="section-body"><table>
+      <thead><tr>
+        <th>일자</th>
+        <th class="num">광고비</th>
+        <th class="num">노출</th>
+        <th class="num">클릭</th>
+        <th class="num">CTR</th>
+        <th class="num">총사용자</th>
+        <th class="num">참여율</th>
+        <th class="num">전환</th>
+      </tr></thead>
+      <tbody><tr>
+        <td>2026-05-11</td>
+        <td class="num">₩97,730</td>
+        <td class="num">22,417</td>
+        <td class="num">1,071</td>
+        <td class="num">4.78%</td>
+        <td class="num">3,191</td>
+        <td class="num">21.78%</td>
+        <td class="num">81</td>
+      </tr><tr>
+        <td>2026-05-12</td>
+        <td class="num">₩129,898</td>
+        <td class="num">24,782</td>
+        <td class="num">1,079</td>
+        <td class="num">4.35%</td>
+        <td class="num">3,029</td>
+        <td class="num">22.17%</td>
+        <td class="num">85</td>
+      </tr><tr>
+        <td>2026-05-13</td>
+        <td class="num">₩140,768</td>
+        <td class="num">31,589</td>
+        <td class="num">1,286</td>
+        <td class="num">4.07%</td>
+        <td class="num">5,331</td>
+        <td class="num">21.04%</td>
+        <td class="num">73</td>
+      </tr><tr>
+        <td>2026-05-14</td>
+        <td class="num">₩183,132</td>
+        <td class="num">41,184</td>
+        <td class="num">1,722</td>
+        <td class="num">4.18%</td>
+        <td class="num">6,970</td>
+        <td class="num">17.98%</td>
+        <td class="num">126</td>
+      </tr><tr>
+        <td>2026-05-15</td>
+        <td class="num">₩215,479</td>
+        <td class="num">37,665</td>
+        <td class="num">1,503</td>
+        <td class="num">3.99%</td>
+        <td class="num">5,841</td>
+        <td class="num">17.67%</td>
+        <td class="num">80</td>
+      </tr><tr>
+        <td>2026-05-16</td>
+        <td class="num">₩194,375</td>
+        <td class="num">34,297</td>
+        <td class="num">1,528</td>
+        <td class="num">4.46%</td>
+        <td class="num">5,909</td>
+        <td class="num">15.97%</td>
+        <td class="num">51</td>
+      </tr><tr>
+        <td>2026-05-17</td>
+        <td class="num">₩187,138</td>
+        <td class="num">42,556</td>
+        <td class="num">1,943</td>
+        <td class="num">4.57%</td>
+        <td class="num">7,320</td>
+        <td class="num">14.94%</td>
+        <td class="num">45</td>
+      </tr></tbody></table></div></div>
+<div class="section">
+  <div class="section-header">
+    <span class="sec-num">SECTION 05</span>
+    <span class="sec-title">GA4 전환 분석</span>
+    <span class="sec-subtitle">집단소송 신청 = 총 사용자 수</span>
+  </div>
+  <div class="section-body"><table>
+    <thead><tr><th>지표</th><th class="num">금주</th><th class="num">전주</th><th class="num">증감</th></tr></thead>
+    <tbody>
+      <tr><td>신청 전환 (총사용자수)</td><td class="num">541</td><td class="num">368</td><td class="num"><span class="up">▲47.0%</span></td></tr>
+      <tr><td>총 사용자</td><td class="num">37,591</td><td class="num">24,367</td><td class="num"><span class="up">▲54.3%</span></td></tr>
+      <tr><td>방문수</td><td class="num">11,763</td><td class="num">7,488</td><td class="num"><span class="up">▲57.1%</span></td></tr>
+      <tr><td>참여율</td><td class="num">18.10%</td><td class="num">20.79%</td><td class="num"><span class="down">▼12.9%</span></td></tr>
+      <tr><td>이탈률</td><td class="num">81.90%</td><td class="num">79.21%</td><td class="num"><span class="up">▲3.4% (부정)</span></td></tr>
+    </tbody>
+  </table><p class="section-narrative">신청 전환율(전환 ÷ 총사용자) = <strong>1.44%</strong>. 전환 단일 정의: GA4_집단소송 신청 이벤트 시트의 <strong>총 사용자 수</strong>.</p></div></div>
+<div class="section">
+  <div class="section-header">
+    <span class="sec-num">SECTION 06</span>
+    <span class="sec-title">참여·이탈 심층 진단</span>
+    <span class="sec-subtitle">Engagement Diagnosis</span>
+  </div>
+  <div class="section-body"><table>
+    <thead><tr>
+      <th>채널</th>
+      <th class="num">총사용자</th>
+      <th class="num">참여율</th>
+      <th class="num">이탈률</th>
+      <th>참여율 변화</th>
+      <th>이탈률 변화</th>
+    </tr></thead>
+    <tbody><tr>
+      <td>메타</td>
+      <td class="num">36,166</td>
+      <td class="num">16.38%</td>
+      <td class="num">83.62%</td>
+      <td><span style="font-size:7pt;"><span class="up">▲10.5%</span></span></td>
+      <td><span style="font-size:7pt;"><span class="down">▼1.8%</span></span></td>
+    </tr><tr>
+      <td>네이버SA</td>
+      <td class="num">1,425</td>
+      <td class="num">78.95%</td>
+      <td class="num">21.05%</td>
+      <td><span style="font-size:7pt;"><span class="down">▼5.0%</span></span></td>
+      <td><span style="font-size:7pt;"><span class="up">▲24.6% (부정)</span></span></td>
+    </tr></tbody></table><div class="callout"><span class="title">S6. 참여·이탈 심층 진단</span>S6 참여·이탈 심층 진단 — (1) 참여율 높은데 전환 낮은 캠페인: Naver sa_pc duo_classaction_260423(참여율 87.5%·전환 0건/8 사용자) — PC 사용자가 페이지에 머물지만 신청 폼 완료까지 가지 못함. 폼 길이·필수 입력 항목 검토 필요. (2) 이탈률 급등 캠페인: Meta slid duo_700 story_260513(이탈률 93.3%·6일 연속 악화) — 슬라이드 광고 → 랜딩 첫화면 메시지 갭. (3) Meta slid duo_700 story_5(이탈률 100%) — 노출 2회뿐인 미세 광고지만 완전 이탈로 향후 확대 금지 신호. (4) 우수 패턴: Naver sa_mo duo_coupang_260425(참여율 81.25%·전환 42.9%) — 쿠팡 사용자 타깃팅이 듀오 집단소송 의도와 강하게 부합. 다른 광고에도 쿠팡 관련 모티프 검토 가치 있음. (5) Meta onecut duo_10000_0427는 참여율 18.9%로 평이하나 일관성과 거래량(클릭 919)으로 채널 1위 견인 — 안정성 우위.</div></div></div>
+<div class="section">
+  <div class="section-header">
+    <span class="sec-num">SECTION 07</span>
+    <span class="sec-title">인사이트</span>
+    <span class="sec-subtitle">IF · THEN · BECAUSE</span>
+  </div>
+  <div class="section-body"><div class="callout">
+        <span class="title">5/14 정점 후 신청 -37% 정체 - 광고 종료 영향</span>
+        <strong>IF</strong> 5/14 71건 → 5/17 45건(-37%)의 신청 감소가 5/15~5/16 duo_700+/now/story 메타 광고 3종 종료와 시기적으로 일치한다면<br>
+        <strong>THEN</strong> 광고 라인업 축소가 트래픽·신청 직접 감소로 연결됨 — 5/17부터의 단순화된 라인업(duo_700+story + duo_10000)이 종료된 3종을 보완하지 못함을 시사<br>
+        <strong>BECAUSE</strong> duo_700+/now/story 3종은 머신러닝(25~) 광고세트로 같은 타깃을 다른 크리에이티브로 노출하는 멀티 변형 구조였음. 단일 변형 의존 시 노출 빈도 누적으로 광고 피로도 가속화 가능
+      </div><div class="callout">
+        <span class="title">메타 참여율 6일 연속 하락 - 크리에이티브 피로 누적</span>
+        <strong>IF</strong> 메타 전체 참여율이 6일 연속 하락 추세로 형성된다면<br>
+        <strong>THEN</strong> 현 크리에이티브 풀의 한계 — 동일 광고가 5/17 기준 24~25일 노출 중인 듀오 개인정보유출 0423 캠페인 위주로 운영되며 새로운 자극 필요<br>
+        <strong>BECAUSE</strong> 광고 노출 4주 차에 접어들면 동일 사용자 도달 빈도가 누적되어 참여율 자연 하락. 5/13부터 시작된 듀오_집단소송_260513 캠페인이 가장 신규이지만 5/17 기준 5일차로 아직 신선도 유지 중. 다음 신규 캠페인 투입 시점 검토 필요
+      </div><div class="callout">
+        <span class="title">네이버SA CPC 점진 개선 - 키워드 등급 전략 효과</span>
+        <strong>IF</strong> 네이버SA 캠페인 CPC가 주중 -45% 개선되어 5/17 ₩1,316까지 하락한다면<br>
+        <strong>THEN</strong> 고가 키워드 입찰 조정과 저가 핵심 키워드 강화의 단계적 효과 — 5/18 다시 -38% 추가 하락(₩816)을 보여 추세 지속성 확인됨<br>
+        <strong>BECAUSE</strong> 주간 키워드 분석상 듀오집단소송·듀오단체소송 등 일반 의도 키워드의 평균 CPC가 ₩1,100~1,500인 반면, 듀오개인정보소송·듀오유출소송 등 구체 의도 키워드는 ₩59~77 수준. 점진적 비드 재배분이 안정화 단계 진입 중
+      </div><div class="callout">
+        <span class="title">네이버 검색어 확장 비효율 - 신규 18종 중 클릭 1건</span>
+        <strong>IF</strong> 5/17 등장한 신규 검색어 18종에서 클릭이 단 1건(전환 0)이라면<br>
+        <strong>THEN</strong> 키워드 확장 매칭 옵션(확장형)에서 발견된 신규 검색어들이 실제 의도와 매칭도가 낮음 — 노출만 발생하고 클릭으로 이어지지 않는 비효율 패턴<br>
+        <strong>BECAUSE</strong> 확장형 매칭은 의미적 유사어를 폭넓게 매칭하나 검색어 보고서를 보면 의도가 광고와 다른 케이스 다수(예: 시부모위자료소송, 보이스피싱반환소송 등). 정기적인 제외 키워드 등록과 일치형 비중 확대 필요
+      </div><div class="callout">
+        <span class="title">채널 효율 격차 - 메타가 네이버 SA 대비 단가 1/15</span>
+        <strong>IF</strong> 주간 평균 메타 CPC ₩80~100대 vs 네이버 SA CPC ₩1,316으로 15.5배 격차가 형성된다면<br>
+        <strong>THEN</strong> 예산 배분 재검토 필요 — 동일 예산으로 메타가 신청 15배 확보 가능하나, 네이버 SA의 검색 의도 정확도(전환율 우위)를 무시할 수 없음<br>
+        <strong>BECAUSE</strong> 5/18 채널별 신청 전환율 비교: Meta 1.34~1.45% vs Naver sa_mo duo_coupang 42.9%·duo_10000 28.6%. 네이버는 클릭당 비용은 높으나 클릭 → 신청 전환률이 메타의 20~30배. 즉 신청당 비용으로 환산하면 채널 격차 축소. 양 채널의 역할(메타=인지 확장, 네이버=핵심 의도 수확) 명확화 필요
+      </div></div></div>
+<div class="section">
+  <div class="section-header">
+    <span class="sec-num">SECTION 08</span>
+    <span class="sec-title">액션 플랜</span>
+    <span class="sec-subtitle">Priority · Channel · Due</span>
+  </div>
+  <div class="section-body"><table><thead><tr><th>우선순위</th><th>채널</th><th>실행 항목</th><th>실행 시점</th></tr></thead><tbody><tr>
+      <td><span class="tag p1">P1</span></td>
+      <td>메타</td>
+      <td>신규 크리에이티브 변형 2개 즉시 투입 — duo_10000_0427 계열(보상 금액 강조 vs 절차 간소화 강조 2종) A/B 테스트, 6일 연속 참여율 하락 추세 차단 목표(주간 평균 참여율 회복선: 종전 +3%p)</td>
+      <td>W+3일</td>
+    </tr><tr>
+      <td><span class="tag p2">P2</span></td>
+      <td>네이버SA</td>
+      <td>주간 검색어 보고서 기반 제외 키워드 등록 30~50개 일괄 추가(예: 시부모위자료소송·보이스피싱반환소송·부모소송위자료 등 의도 불일치 추정 항목), 확장형 매칭을 일치형 우선으로 재구성. 신규 18종 중 클릭 1건 비효율 해소 목표</td>
+      <td>W+5일</td>
+    </tr><tr>
+      <td><span class="tag p3">P3</span></td>
+      <td>GA·랜딩</td>
+      <td>Naver sa_pc duo_classaction 채널의 참여율 87.5%·전환 0% 격차 분석 — 데스크탑 랜딩의 신청 폼 UX 진단(필수 입력 항목 수·로딩 속도·전환 버튼 위치). 데스크탑 사용자 신청 완료율 추정 +5%p 목표</td>
+      <td>W+7일</td>
+    </tr></tbody></table></div></div>
+<div class="footer">
+  에이아이컨실리움 | 법무법인 더 에이치 황해 — CONFIDENTIAL | 작성일 2026-05-19<span class="pgnum"></span>
+</div>
+</div>
+</body>
+</html>
