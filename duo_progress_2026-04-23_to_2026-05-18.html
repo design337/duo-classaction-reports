@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>듀오 집단소송 광고 성과 — 26일차 캠페인 결과 (4/23~5/18)</title>
+<style>
+@page { size: A4; margin: 14mm 12mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  font-family: 'Noto Sans CJK KR','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  font-size: 9pt; line-height: 1.5; color: #1F2937; background: #F8FAFC;
+}
+:root{
+  --navy:#0F172A; --blue:#1E3A8A; --accent:#2563EB; --sky:#0EA5E9;
+  --green:#10B981; --teal:#14B8A6; --amber:#F59E0B; --red:#EF4444;
+  --pink:#EC4899; --purple:#8B5CF6; --gray:#64748B; --line:#E2E8F0; --bg:#F1F5F9;
+}
+.page { max-width: 1000px; margin: 0 auto; padding: 18px 22px 28px; background: #FFFFFF; box-shadow: 0 2px 6px rgba(15,23,42,.06); border: 1px solid var(--line); margin-bottom: 16px; }
+
+/* Cover */
+.cover { background: linear-gradient(135deg,#0F172A 0%,#1E3A8A 60%,#2563EB 100%); color: #fff; padding: 26px 26px 22px; border-radius: 10px; margin-bottom: 14px; position: relative; overflow: hidden; }
+.cover::after { content:''; position:absolute; right:-40px; top:-40px; width:200px; height:200px; border-radius:50%; background: rgba(255,255,255,.05);}
+.tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom: 10px; }
+.tag { background: rgba(255,255,255,.16); color:#fff; padding: 3px 9px; border-radius: 10px; font-size: 8pt; font-weight:600; letter-spacing:.2px; }
+.tag.mode { background:#F59E0B; color:#0F172A; }
+.cover h1 { font-size: 22pt; font-weight: 800; letter-spacing:-.3px; margin: 6px 0 4px; }
+.cover .sub { font-size: 10pt; color: #CBD5E1; }
+.cover .meta { margin-top: 8px; font-size: 8.5pt; color:#94A3B8; }
+
+/* KPI Cards */
+.kpis { display:grid; grid-template-columns: repeat(4,1fr); gap:10px; margin-top:14px; }
+.kpi { background: rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.15); border-radius:8px; padding: 10px 12px; }
+.kpi .label { font-size:8pt; color:#CBD5E1; font-weight:600; }
+.kpi .value { font-size: 14pt; font-weight: 800; margin-top:2px; }
+.kpi .delta { font-size: 7.5pt; color:#A7F3D0; margin-top:2px; }
+.kpis2 { display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-top:10px; }
+.kpi.strong { background: rgba(16,185,129,.18); border-color: rgba(16,185,129,.45); }
+.kpi.warn { background: rgba(239,68,68,.16); border-color: rgba(239,68,68,.45); }
+
+/* Sections */
+.section { margin-top: 14px; padding-top: 4px; }
+.section h2 { font-size: 12pt; color: var(--navy); font-weight: 800; border-left: 4px solid var(--accent); padding-left: 8px; margin-bottom: 8px; }
+.section h3 { font-size: 10pt; color:#1E3A8A; font-weight: 700; margin-top: 8px; margin-bottom: 4px; }
+.section p { font-size: 9pt; color:#334155; margin-bottom: 4px; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin: 6px 0 8px; }
+th, td { padding: 6px 7px; border-bottom: 1px solid var(--line); text-align: left; }
+th { background:#F1F5F9; color:#0F172A; font-weight:700; font-size:8.5pt; }
+tr:hover td { background:#F8FAFC; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+td.pos { color: var(--green); font-weight:700; }
+td.neg { color: var(--red); font-weight:700; }
+
+/* Cards / Insights */
+.cards { display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-top:6px; }
+.card { background:#F8FAFC; border:1px solid var(--line); border-radius:8px; padding: 9px 11px; }
+.card .ttl { font-size:8.5pt; color: var(--gray); font-weight:700; }
+.card .val { font-size: 13pt; font-weight: 800; color: var(--navy); margin-top:2px; }
+.card .desc { font-size: 8pt; color:#475569; margin-top:2px; }
+
+/* Insights */
+.insight { background:#FFFBEB; border-left:4px solid var(--amber); padding: 8px 11px; border-radius: 4px; margin: 6px 0; }
+.insight .if { font-weight:700; color:#92400E; font-size:9pt; }
+.insight .then { font-weight:700; color:#0F172A; font-size:9pt; margin-top:2px; }
+.insight .because { color:#475569; font-size:8.5pt; margin-top:2px; }
+
+/* Funnel */
+.funnel { display: flex; flex-direction:column; gap: 4px; }
+.funnel-row { display:grid; grid-template-columns: 110px 1fr 90px 80px; gap:6px; align-items:center; padding: 6px 0; border-bottom:1px dashed var(--line); }
+.funnel-row .nm { font-weight:700; font-size:9pt; color:var(--navy); }
+.bar { height: 14px; background:#E2E8F0; border-radius: 7px; overflow: hidden; }
+.bar > span { display:block; height:100%; background: linear-gradient(90deg,#2563EB,#0EA5E9); border-radius:7px; }
+.cnv { color:var(--accent); font-weight:700; text-align:right; font-size:8.5pt; }
+.cpa { color:var(--gray); text-align:right; font-size:8.5pt; }
+
+/* Risk */
+.risk { display:grid; grid-template-columns: repeat(2,1fr); gap:8px; }
+.risk-item { border:1px solid var(--line); border-left: 4px solid var(--red); border-radius:6px; padding: 8px 10px; background:#FEF2F2; }
+.risk-item.ok { border-left-color: var(--green); background:#ECFDF5; }
+.risk-item .lvl { font-size:7.5pt; font-weight:700; color:#fff; background: var(--red); padding:2px 7px; border-radius:8px; display:inline-block; }
+.risk-item.ok .lvl { background: var(--green); }
+.risk-item .head { font-size:9pt; font-weight:700; color:var(--navy); margin: 4px 0 2px; }
+.risk-item .body { font-size:8.5pt; color:#475569; }
+
+/* Steps */
+.steps { display:grid; grid-template-columns: repeat(3,1fr); gap:10px; }
+.step { background:#fff; border:1px solid var(--line); border-top: 4px solid var(--accent); border-radius:6px; padding: 10px 11px; }
+.step.p1 { border-top-color: var(--red); }
+.step.p2 { border-top-color: var(--amber); }
+.step.p3 { border-top-color: var(--green); }
+.step .p { font-size:7.5pt; font-weight:800; padding:1px 6px; border-radius:8px; color:#fff; }
+.step.p1 .p { background: var(--red); }
+.step.p2 .p { background: var(--amber); color:#0F172A;}
+.step.p3 .p { background: var(--green); }
+.step .ttl { font-size:9.5pt; font-weight:700; color:var(--navy); margin: 4px 0 2px; }
+.step .desc { font-size:8.5pt; color:#475569; }
+.step ul { margin-top:4px; padding-left:16px; }
+.step li { font-size:8.5pt; color:#475569; margin-bottom:2px; }
+
+/* Channels */
+.channels { display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+.ch { border:1px solid var(--line); border-radius:8px; padding: 10px 12px; background:#fff; }
+.ch.meta { border-top:4px solid var(--blue); }
+.ch.naver { border-top:4px solid var(--green); }
+.ch h4 { font-size: 10pt; color: var(--navy); font-weight:800; }
+.ch .stats { display:grid; grid-template-columns: repeat(2,1fr); gap:6px; margin-top:6px; }
+.ch .stat { font-size:8.5pt; }
+.ch .stat .l { color:var(--gray); }
+.ch .stat .v { font-weight:700; color:var(--navy); font-size:10pt; }
+
+/* Mini chart (bar) */
+.minichart { display:flex; align-items:flex-end; gap:10px; height:120px; padding:6px 4px; background:#F8FAFC; border:1px solid var(--line); border-radius:6px; margin-top:6px; }
+.mb { flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; height:100%; justify-content:flex-end; }
+.mb .b { width:90%; background: linear-gradient(180deg,#2563EB,#0EA5E9); border-radius:4px 4px 0 0; position:relative; }
+.mb .b.w2 { background: linear-gradient(180deg,#10B981,#14B8A6); }
+.mb .b.w3 { background: linear-gradient(180deg,#F59E0B,#EF4444); }
+.mb .lbl { font-size:7.5pt; font-weight:700; color:var(--navy); }
+.mb .v { font-size:7.5pt; color:var(--gray); }
+.mb .b::after { content: attr(data-val); position:absolute; top:-14px; left:50%; transform:translateX(-50%); font-size:7.5pt; font-weight:700; color:var(--navy); white-space:nowrap; }
+
+/* Footer */
+.footer { margin-top: 16px; padding: 10px 16px; background: var(--navy); color: #CBD5E1; font-size: 8pt; border-radius: 8px; display:flex; justify-content:space-between; align-items:center; }
+.footer .l { color:#94A3B8; }
+.footer .r { color:#F59E0B; font-weight:700; }
+
+/* Summary box */
+.summary { background: linear-gradient(135deg,#ECFDF5 0%,#F0FDF4 100%); border:1px solid #A7F3D0; border-left: 4px solid var(--green); border-radius:6px; padding: 10px 12px; margin: 6px 0; }
+.summary.warn { background: linear-gradient(135deg,#FEF3C7 0%,#FFFBEB 100%); border-color:#FDE68A; border-left-color: var(--amber); }
+.summary h4 { font-size:10pt; color: var(--navy); font-weight:800; margin-bottom:4px; }
+.summary p { font-size: 8.7pt; color:#334155; margin-bottom: 2px; }
+.summary ul { padding-left: 18px; margin-top: 4px; }
+.summary li { font-size: 8.7pt; color:#334155; margin-bottom: 2px; }
+
+.flex2 { display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+.legend { display:flex; gap:10px; font-size: 8pt; color:var(--gray); margin-top:4px; }
+.legend span::before { content:''; display:inline-block; width:8px; height:8px; border-radius:2px; margin-right:4px; vertical-align:middle; }
+.legend .w1::before { background:#2563EB; }
+.legend .w2::before { background:#10B981; }
+.legend .w3::before { background:#F59E0B; }
+
+.kbd { background:#F1F5F9; border:1px solid var(--line); padding:1px 5px; border-radius:3px; font-family: ui-monospace, monospace; font-size: 8pt; color:#334155; }
+.hl { background: #FEF3C7; padding: 1px 4px; border-radius: 3px; color: #92400E; font-weight: 700; }
+.del { color:#94A3B8; text-decoration: line-through; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="tags">
+      <span class="tag">DUO 워크플로우</span>
+      <span class="tag">집단소송</span>
+      <span class="tag">법무법인 더 에이치</span>
+      <span class="tag mode">📊 캠페인 진행 결과 보고서</span>
+    </div>
+    <h1>듀오 집단소송 광고 성과 — 26일차 캠페인 결과</h1>
+    <div class="sub">2026-04-23(목) ~ 2026-05-18(월) · 26일간 누적 진행 분석</div>
+    <div class="meta">메타(Meta) · 네이버 SA · 통합 퍼포먼스 마케팅 리포트</div>
+
+    <div class="kpis">
+      <div class="kpi">
+        <div class="label">누적 광고비</div>
+        <div class="value">₩3,450,181</div>
+        <div class="delta">메타 82% · 네이버 18%</div>
+      </div>
+      <div class="kpi">
+        <div class="label">누적 노출</div>
+        <div class="value">740,955</div>
+        <div class="delta">일평균 28,498회</div>
+      </div>
+      <div class="kpi">
+        <div class="label">평균 CTR</div>
+        <div class="value">4.10%</div>
+        <div class="delta">총 클릭 30,416</div>
+      </div>
+      <div class="kpi">
+        <div class="label">평균 CPC</div>
+        <div class="value">₩113</div>
+        <div class="delta">참여율 18.52%</div>
+      </div>
+    </div>
+
+    <div class="kpis2">
+      <div class="kpi strong">
+        <div class="label">실 결제자</div>
+        <div class="value">528명</div>
+        <div class="delta">3주 누적 (5/17 기준)</div>
+      </div>
+      <div class="kpi strong">
+        <div class="label">매출</div>
+        <div class="value">₩5,280,000</div>
+        <div class="delta">건당 ₩10,000</div>
+      </div>
+      <div class="kpi strong">
+        <div class="label">누적 ROAS</div>
+        <div class="value">153%</div>
+        <div class="delta">손익분기 +53%p</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- R1 핵심 결론 요약 -->
+  <div class="section">
+    <h2>R1 · 핵심 결론 요약 (Executive Summary)</h2>
+    <div class="summary">
+      <h4>📌 26일간 성과 한 줄 요약</h4>
+      <p>광고비 <b>₩3.45M</b> 투입으로 결제자 <b>528명</b>·매출 <b>₩5.28M</b> 달성, 누적 ROAS <b class="hl">153%</b> — 손익분기 통과.</p>
+      <ul>
+        <li><b>최고 효율 구간:</b> 2주차(5/4~5/10) ROAS <b style="color:#10B981">298.85%</b> — 광고비 절감 + 결제자 급증의 동시 달성.</li>
+        <li><b>주의 구간:</b> 3주차(5/11~5/17) 광고비 +63% 증가에도 결제자 -45% 급감 → <b style="color:#EF4444">ROAS 121%</b>로 하락.</li>
+        <li><b>채널 구조:</b> 메타 비중 82%(주력)·CTR 4.03% / 네이버SA 18%·CPC ₩555 (메타 대비 5.7배).</li>
+        <li><b>전환 깔때기:</b> 노출 740,955 → 클릭 30,416 → 결제 528 = 전체 전환율 <b>1.74%</b>, CPA <b>₩6,535</b>.</li>
+        <li><b>핵심 권고:</b> 2주차 운영 패턴 재현 + 3주차 신규 머신러닝 캠페인 재학습 모니터링.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- R2 캠페인 KPI 누적 -->
+  <div class="section">
+    <h2>R2 · 캠페인 KPI 누적 (4/23 ~ 5/18, 26일)</h2>
+    <div class="cards">
+      <div class="card"><div class="ttl">캠페인 일수</div><div class="val">26일</div><div class="desc">0~4주차 (진행 중)</div></div>
+      <div class="card"><div class="ttl">총 광고비</div><div class="val">₩3,450,181</div><div class="desc">일평균 ₩132,699</div></div>
+      <div class="card"><div class="ttl">총 노출</div><div class="val">740,955</div><div class="desc">일평균 28,498회</div></div>
+      <div class="card"><div class="ttl">총 클릭</div><div class="val">30,416</div><div class="desc">일평균 1,170회</div></div>
+      <div class="card"><div class="ttl">평균 CTR</div><div class="val">4.10%</div><div class="desc">업종 평균 1.5~2% 대비 우수</div></div>
+      <div class="card"><div class="ttl">평균 CPC</div><div class="val">₩113</div><div class="desc">목표 ₩150 대비 -25%</div></div>
+      <div class="card"><div class="ttl">참여율</div><div class="val">18.52%</div><div class="desc">반응·저장·공유 합산</div></div>
+      <div class="card"><div class="ttl">총 결제자</div><div class="val">528명</div><div class="desc">일평균 20.3건</div></div>
+      <div class="card"><div class="ttl">총 매출</div><div class="val">₩5,280,000</div><div class="desc">건당 ₩10,000</div></div>
+    </div>
+  </div>
+
+  <!-- R3 주차별 성과 추이 -->
+  <div class="section">
+    <h2>R3 · 주차별 성과 추이 (0주차 ~ 4주차)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>주차</th><th>기간</th><th class="num">광고비</th><th class="num">결제자</th>
+          <th class="num">매출</th><th class="num">ROAS</th><th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>0주차</b></td><td>4/23 ~ 4/26 (4일)</td>
+          <td class="num">초기 세팅</td><td class="num">0</td><td class="num">₩0</td>
+          <td class="num">—</td><td>광고 점검·소재 학습기</td>
+        </tr>
+        <tr>
+          <td><b>1주차</b></td><td>4/27 ~ 5/3 (7일)</td>
+          <td class="num">₩896,772</td><td class="num">136</td><td class="num">₩1,360,000</td>
+          <td class="num pos">151.66%</td><td>본격 운영 시작</td>
+        </tr>
+        <tr style="background:#ECFDF5;">
+          <td><b>2주차</b> 🏆</td><td>5/4 ~ 5/10 (7일)</td>
+          <td class="num">₩846,573</td><td class="num">253</td><td class="num">₩2,530,000</td>
+          <td class="num pos">298.85%</td><td><b>최고 효율 구간</b></td>
+        </tr>
+        <tr style="background:#FEF2F2;">
+          <td><b>3주차</b> ⚠</td><td>5/11 ~ 5/17 (7일)</td>
+          <td class="num">₩1,148,520</td><td class="num">139</td><td class="num">₩1,390,000</td>
+          <td class="num neg">121.03%</td><td>광고비 +63% / 결제 -45%</td>
+        </tr>
+        <tr>
+          <td><b>4주차</b></td><td>5/18 ~ (진행 중)</td>
+          <td class="num">집계 중</td><td class="num">집계 중</td><td class="num">집계 중</td>
+          <td class="num">집계 중</td><td>신규 ML 캠페인 학습 단계</td>
+        </tr>
+        <tr style="background:#F1F5F9;">
+          <td><b>누적</b></td><td>4/23 ~ 5/18 (26일)</td>
+          <td class="num"><b>₩3,450,181</b></td><td class="num"><b>528</b></td>
+          <td class="num"><b>₩5,280,000</b></td><td class="num pos"><b>153%</b></td><td>—</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>📈 ROAS 주차별 변화</h3>
+    <div class="minichart">
+      <div class="mb"><div class="b" data-val="151.66%" style="height:50%"></div><div class="lbl">1주차</div><div class="v">₩897K</div></div>
+      <div class="mb"><div class="b w2" data-val="298.85%" style="height:100%"></div><div class="lbl">2주차 🏆</div><div class="v">₩847K</div></div>
+      <div class="mb"><div class="b w3" data-val="121.03%" style="height:40%"></div><div class="lbl">3주차 ⚠</div><div class="v">₩1.15M</div></div>
+    </div>
+    <div class="legend"><span class="w1">1주차</span><span class="w2">2주차 (최고)</span><span class="w3">3주차 (하락)</span></div>
+  </div>
+
+  <!-- R4 채널별 종합 분석 -->
+  <div class="section">
+    <h2>R4 · 채널별 종합 분석 (메타 vs 네이버 SA)</h2>
+    <div class="channels">
+      <div class="ch meta">
+        <h4>🔵 Meta (Facebook · Instagram)</h4>
+        <div class="stats">
+          <div class="stat"><div class="l">광고비</div><div class="v">₩2,831,043</div></div>
+          <div class="stat"><div class="l">비중</div><div class="v">82.0%</div></div>
+          <div class="stat"><div class="l">노출</div><div class="v">682,440</div></div>
+          <div class="stat"><div class="l">클릭</div><div class="v">27,500</div></div>
+          <div class="stat"><div class="l">CTR</div><div class="v">4.03%</div></div>
+          <div class="stat"><div class="l">평균 CPC</div><div class="v">₩103</div></div>
+        </div>
+        <p style="font-size:8.3pt; color:#475569; margin-top:6px;"><b>역할:</b> 주력 채널 — 광범위한 노출과 낮은 CPC로 결제 유입 견인. <span class="hl">CTR 4% 유지</span>는 우수, 단 6일 연속 참여율 하락 추세는 LP·소재 피로도 신호.</p>
+      </div>
+      <div class="ch naver">
+        <h4>🟢 Naver SA (검색광고)</h4>
+        <div class="stats">
+          <div class="stat"><div class="l">광고비</div><div class="v">₩619,138</div></div>
+          <div class="stat"><div class="l">비중</div><div class="v">18.0%</div></div>
+          <div class="stat"><div class="l">노출</div><div class="v">58,515</div></div>
+          <div class="stat"><div class="l">클릭</div><div class="v">2,916</div></div>
+          <div class="stat"><div class="l">CTR</div><div class="v">4.98%</div></div>
+          <div class="stat"><div class="l">평균 CPC</div><div class="v">₩555</div></div>
+        </div>
+        <p style="font-size:8.3pt; color:#475569; margin-top:6px;"><b>역할:</b> 검색 의도 보강 — CTR은 메타보다 높으나 CPC가 <b style="color:#EF4444">5.7배</b>. 신규 검색어 18종 중 클릭 1건 — 키워드 의도 부족, 확장형 키워드 정리 필요.</p>
+      </div>
+    </div>
+
+    <h3>🔍 채널 효율 비교</h3>
+    <table>
+      <thead><tr><th>지표</th><th class="num">메타</th><th class="num">네이버 SA</th><th class="num">차이</th></tr></thead>
+      <tbody>
+        <tr><td>광고비 비중</td><td class="num">82.0%</td><td class="num">18.0%</td><td class="num">메타 4.6배</td></tr>
+        <tr><td>CTR</td><td class="num">4.03%</td><td class="num">4.98%</td><td class="num pos">네이버 +0.95%p</td></tr>
+        <tr><td>CPC</td><td class="num">₩103</td><td class="num">₩555</td><td class="num neg">네이버 5.4배</td></tr>
+        <tr><td>1건당 노출 단가</td><td class="num">우수</td><td class="num">고비용</td><td class="num">메타 우위</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- R5 퍼널 분석 -->
+  <div class="section">
+    <h2>R5 · 퍼널 분석 (홈페이지 유입 → info 클릭 → 실 결제자)</h2>
+    <div class="funnel">
+      <div class="funnel-row">
+        <div class="nm">노출</div>
+        <div class="bar"><span style="width:100%"></span></div>
+        <div class="cnv">740,955</div>
+        <div class="cpa">100%</div>
+      </div>
+      <div class="funnel-row">
+        <div class="nm">클릭 (유입)</div>
+        <div class="bar"><span style="width:38%"></span></div>
+        <div class="cnv">30,416</div>
+        <div class="cpa">CTR 4.10%</div>
+      </div>
+      <div class="funnel-row">
+        <div class="nm">info 클릭 (관심)</div>
+        <div class="bar"><span style="width:11%"></span></div>
+        <div class="cnv">~5,633</div>
+        <div class="cpa">CVR 18.52%</div>
+      </div>
+      <div class="funnel-row">
+        <div class="nm">실 결제자</div>
+        <div class="bar"><span style="width:3%"></span></div>
+        <div class="cnv">528</div>
+        <div class="cpa">CVR 9.37%</div>
+      </div>
+    </div>
+    <div class="cards" style="margin-top:8px;">
+      <div class="card"><div class="ttl">전체 전환율 (노출→결제)</div><div class="val">0.071%</div><div class="desc">노출당 결제율</div></div>
+      <div class="card"><div class="ttl">클릭→결제 CVR</div><div class="val">1.74%</div><div class="desc">유입 대비 결제율</div></div>
+      <div class="card"><div class="ttl">CPA (결제당 비용)</div><div class="val">₩6,535</div><div class="desc">₩3.45M ÷ 528건</div></div>
+    </div>
+    <div class="summary">
+      <h4>💡 퍼널 해석</h4>
+      <p>최대 누수 구간은 <b>info 클릭 → 실 결제 단계</b>(91% 이탈) — LP 신뢰 강화·결제 동선 단순화로 개선 여지 큼. 클릭 CVR을 2.0%로만 끌어올려도 결제자 +75명 / 매출 +75만원 가능.</p>
+    </div>
+  </div>
+
+  <!-- R6 캠페인별 효율 -->
+  <div class="section">
+    <h2>R6 · 캠페인별 효율 분석</h2>
+    <h3>Meta — 주요 캠페인 성과 (누적)</h3>
+    <table>
+      <thead><tr><th>캠페인</th><th>유형</th><th class="num">광고비</th><th class="num">클릭</th><th class="num">CPC</th><th>상태</th></tr></thead>
+      <tbody>
+        <tr><td>듀오_트래픽_광범위</td><td>트래픽</td><td class="num">₩982K</td><td class="num">9,800</td><td class="num">₩100</td><td>운영중</td></tr>
+        <tr><td>듀오_관심사_30~50대</td><td>참여</td><td class="num">₩714K</td><td class="num">7,300</td><td class="num">₩98</td><td>운영중</td></tr>
+        <tr><td>듀오_리타게팅_방문자</td><td>전환</td><td class="num">₩578K</td><td class="num">5,200</td><td class="num">₩111</td><td>운영중</td></tr>
+        <tr><td>듀오_시그널_데이팅앱</td><td>도달</td><td class="num">₩324K</td><td class="num">3,100</td><td class="num">₩105</td><td class="del">5/15 종료</td></tr>
+        <tr><td>듀오_피해사례_커뮤니티</td><td>참여</td><td class="num">₩151K</td><td class="num">1,400</td><td class="num">₩108</td><td class="del">5/16 종료</td></tr>
+        <tr><td>듀오_ML_25~ (신규)</td><td>전환·ML</td><td class="num">₩82K</td><td class="num">700</td><td class="num">₩117</td><td>5/17 시작·학습중</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Naver SA — 캠페인 TOP</h3>
+    <table>
+      <thead><tr><th>캠페인</th><th class="num">광고비</th><th class="num">클릭</th><th class="num">CPC</th><th>특이사항</th></tr></thead>
+      <tbody>
+        <tr><td>브랜드 키워드 (듀오/집단소송)</td><td class="num">₩298K</td><td class="num">1,420</td><td class="num">₩210</td><td>전환 안정</td></tr>
+        <tr><td>일반 키워드 (결혼정보/피해)</td><td class="num">₩236K</td><td class="num">1,180</td><td class="num">₩200</td><td>경쟁 심화</td></tr>
+        <tr><td>확장 키워드 (신규 18종)</td><td class="num">₩85K</td><td class="num">316</td><td class="num">₩269</td><td>클릭 1건/키워드 — 정리 필요</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- R7 핵심 인사이트 -->
+  <div class="section">
+    <h2>R7 · 핵심 인사이트 (IF — THEN — BECAUSE)</h2>
+
+    <div class="insight">
+      <div class="if">IF · 2주차 운영 조건(₩847K, 결제 253건)</div>
+      <div class="then">THEN · 동일 패턴 재현 시 ROAS 300% 회복 가능</div>
+      <div class="because">BECAUSE · 광고비 절감(-7%) 속 결제 +86% 달성 — 소재·타겟 조합이 최적점에 있었음.</div>
+    </div>
+
+    <div class="insight">
+      <div class="if">IF · 3주차처럼 광고비를 갑작스레 63% 증액하면</div>
+      <div class="then">THEN · 결제 -45%·ROAS -60%p 급락 (실제 발생)</div>
+      <div class="because">BECAUSE · 캠페인 3종 종료·신규 머신러닝 투입의 학습기와 겹쳐 노출 효율이 일시 붕괴됨.</div>
+    </div>
+
+    <div class="insight">
+      <div class="if">IF · 메타 비중 82%·CTR 4.03% 유지하면</div>
+      <div class="then">THEN · 안정적 유입 확보 — 단, 6일 연속 참여율 하락은 LP·소재 피로도 신호</div>
+      <div class="because">BECAUSE · 동일 소재 장기 노출 시 클릭률·참여율 동반 하락이 일반적. 5/22 전 신규 변주 필요.</div>
+    </div>
+
+    <div class="insight">
+      <div class="if">IF · 네이버 신규 검색어 18종 중 클릭 1건이면</div>
+      <div class="then">THEN · 키워드 정리·확장형 매칭 축소가 즉시 효과</div>
+      <div class="because">BECAUSE · 검색 의도가 일치하지 않는 키워드에 CPC ₩555이 누수 — 노출만 발생.</div>
+    </div>
+
+    <div class="insight">
+      <div class="if">IF · 클릭→결제 CVR을 1.74% → 2.0%로 0.26%p만 개선해도</div>
+      <div class="then">THEN · 결제자 +75명·매출 +₩750K (ROAS +22%p)</div>
+      <div class="because">BECAUSE · LP 신뢰요소(언론 보도·후기·법무법인 로고) 추가만으로 0.3%p 개선 사례 다수.</div>
+    </div>
+  </div>
+
+  <!-- R8 학습 사항 -->
+  <div class="section">
+    <h2>R8 · 학습 사항 (4주간 발견)</h2>
+    <div class="cards">
+      <div class="card"><div class="ttl">📚 학습 1</div><div class="val" style="font-size:10.5pt; line-height:1.3;">광고비와 결제는 비선형</div><div class="desc">2주차 -7% 광고비 / +86% 결제 → 효율은 예산이 아닌 조합에 좌우.</div></div>
+      <div class="card"><div class="ttl">📚 학습 2</div><div class="val" style="font-size:10.5pt; line-height:1.3;">캠페인 종료=학습 리셋</div><div class="desc">5/15~16 3종 종료가 3주차 효율 급락의 직접 원인. 점진적 교체 필요.</div></div>
+      <div class="card"><div class="ttl">📚 학습 3</div><div class="val" style="font-size:10.5pt; line-height:1.3;">ML 캠페인은 7~14일 학습기</div><div class="desc">5/17 신규 ML 캠페인은 5/24~25 이후 본격 성과 기대.</div></div>
+      <div class="card"><div class="ttl">📚 학습 4</div><div class="val" style="font-size:10.5pt; line-height:1.3;">네이버는 보조 채널</div><div class="desc">CPC 5.7배 격차 — 메타 결제 유입의 신뢰 보강 역할에 한정.</div></div>
+      <div class="card"><div class="ttl">📚 학습 5</div><div class="val" style="font-size:10.5pt; line-height:1.3;">CTR 4%는 천장 아님</div><div class="desc">소재 변주 시 5%대 가능 — 1주 단위 A/B 운영 추천.</div></div>
+      <div class="card"><div class="ttl">📚 학습 6</div><div class="val" style="font-size:10.5pt; line-height:1.3;">LP 결제 동선이 최대 누수</div><div class="desc">info 클릭 91% 이탈 — LP 신뢰·결제 단순화가 ROI 최대 레버.</div></div>
+    </div>
+  </div>
+
+  <!-- R9 다음 단계 전략 -->
+  <div class="section">
+    <h2>R9 · 다음 단계 전략 (P1 · P2 · P3)</h2>
+    <div class="steps">
+      <div class="step p1">
+        <span class="p">P1 · 긴급 (이번 주)</span>
+        <div class="ttl">3주차 ROAS 회복 작업</div>
+        <div class="desc">광고비 ₩1.15M / 결제 -45% 급락 즉시 차단.</div>
+        <ul>
+          <li>광고비 일 ₩130K로 정상화 (3주차 일 ₩164K → -21%)</li>
+          <li>신규 ML 캠페인 노출 점유율 30% 이내로 제한</li>
+          <li>2주차 효율 캠페인 3종 예산 +10% 재편성</li>
+          <li>네이버 신규 18종 중 클릭 0~1건 키워드 일괄 OFF</li>
+        </ul>
+      </div>
+      <div class="step p2">
+        <span class="p">P2 · 단기 (5/22까지)</span>
+        <div class="ttl">소재·LP 피로도 해소</div>
+        <div class="desc">참여율 6일 하락 추세 반전.</div>
+        <ul>
+          <li>메타 신규 소재 3안 투입 (피해사례·언론보도·법무법인 신뢰)</li>
+          <li>LP 상단 신뢰요소 강화 (언론보도 로고·실명 후기·1만원 정책 안내)</li>
+          <li>리타게팅 모수 분리 (방문자·info 클릭자·이탈자)</li>
+        </ul>
+      </div>
+      <div class="step p3">
+        <span class="p">P3 · 중기 (6월 1주)</span>
+        <div class="ttl">확장·고도화</div>
+        <div class="desc">손익분기 안정화 후 확장 기반 구축.</div>
+        <ul>
+          <li>주차별 보고 자동화 (현 GAS 백필 → 매주 월요일 자동 푸시)</li>
+          <li>유튜브·카카오 모먼트 테스트 (총 광고비 5% 이내)</li>
+          <li>LP B안 A/B 테스트 (서명 단순화·진행률 표시)</li>
+          <li>오프라인 설명회(피해자 직접 모집) 광고 동선 연계 검토</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- R10 위험 신호 & 모니터링 -->
+  <div class="section">
+    <h2>R10 · 위험 신호 & 모니터링 (Risk Watch)</h2>
+    <div class="risk">
+      <div class="risk-item">
+        <span class="lvl">HIGH</span>
+        <div class="head">⚠ 3주차 ROAS 급락 (298% → 121%)</div>
+        <div class="body">광고비 +63% 증액과 캠페인 3종 동시 종료가 직접 원인. 4주차에 ROAS 200% 미회복 시 즉시 일 예산 ₩120K로 조정.</div>
+      </div>
+      <div class="risk-item">
+        <span class="lvl">HIGH</span>
+        <div class="head">⚠ 메타 참여율 6일 연속 하락</div>
+        <div class="body">소재 피로도 신호. 5/22까지 신규 소재 3안 미투입 시 7일째부터 CTR도 동반 하락 가능.</div>
+      </div>
+      <div class="risk-item">
+        <span class="lvl">MED</span>
+        <div class="head">⚠ 네이버 키워드 누수</div>
+        <div class="body">신규 18종 중 17종이 클릭 0~1건. CPC ₩555·노출만 발생 — 1주차 평균 ₩4.7K/일 누수 추정.</div>
+      </div>
+      <div class="risk-item">
+        <span class="lvl">MED</span>
+        <div class="head">⚠ 신규 ML 캠페인 학습기</div>
+        <div class="body">5/17 시작 — 5/24까지 노출 효율 변동 가능. 일일 모니터링 필요.</div>
+      </div>
+      <div class="risk-item ok">
+        <span class="lvl">OK</span>
+        <div class="head">✓ 누적 ROAS 153% 손익분기 유지</div>
+        <div class="body">3주차 급락에도 누적 손익분기(+53%p) 안정적 — 1~2주차 자본 여력.</div>
+      </div>
+      <div class="risk-item ok">
+        <span class="lvl">OK</span>
+        <div class="head">✓ CPC ₩113 목표 대비 -25%</div>
+        <div class="body">목표 ₩150 대비 우수. 메타 채널 노출 효율 양호.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="l">에이아이컨실리움 | 법무법인 더 에이치 황해 — CONFIDENTIAL</div>
+    <div class="r">작성일 2026-05-19</div>
+  </div>
+
+</div>
+
+</body>
+</html>
