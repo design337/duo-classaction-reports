@@ -298,7 +298,7 @@ p { margin: 4px 0; }
     <span class="sec-title">핵심 결론</span>
     <span class="sec-subtitle">Executive Summary</span>
   </div>
-  <div class="section-body"><div class="callout"><span class="title">D1. 오늘의 결론</span>5/17 신청 45명(메타 30·네이버SA 7·Kakao 3·직접 2·기타 3)으로 5/14 정점 이후 정체 국면. 전일대비 핵심 변화: ① 메타 참여율 6일 연속 하락(피로 누적), ② 네이버SA CPC ₩1,316으로 개선됐으나 메타 대비 여전히 약 15.5배 격차, ③ 5/15~16 캠페인 3종 종료 → 5/17 신규 머신러닝 25- 캠페인 투입.</div><table>
+  <div class="section-body"><div class="callout"><span class="title">D1. 오늘의 결론</span>doPost 진단 분석</div><table>
     <thead><tr><th>지표</th><th class="num">당일</th><th class="num">전일</th><th class="num">증감</th></tr></thead>
     <tbody>
       <tr><td>광고비</td><td class="num">₩187,138</td><td class="num">₩194,375</td><td class="num"><span class="down">▼3.7%</span></td></tr>
@@ -405,7 +405,7 @@ p { margin: 4px 0; }
     <td class="num">85.06%</td>
   </tr>
     </tbody>
-  </table><div class="callout"><span class="title"><span class="tag meta">메타</span> 채널 진단</span>메타는 30건/45건(약 66.7%)으로 여전히 최대 채널이지만 신청 효율은 둔화. 효율 상위 캠페인은 duo_700+story_260513(평균 CPC ₩68대) 및 duo_10000_0427 계열로 확인되며 저단가 노출 확보를 견인. 다만 참여율(클릭/노출) 지표가 6일 연속 하락해 크리에이티브 피로도가 누적되는 신호. 5/15~16 종료된 3종 캠페인 공백을 5/17 신규 머신러닝 25- 캠페인이 받았으나 학습 초기로 단가 변동성 클 것으로 추정컨대 D+2~3 안정화 모니터링 필요. 결론적으로 메타는 &#39;저단가 유입은 유지·전환 효율은 정체&#39;.</div><div class="callout"><span class="title"><span class="tag naver">네이버SA</span> 채널 진단</span>네이버SA는 7건/45건(약 15.6%) 기여. CPC ₩1,316으로 직전 대비 개선됐지만 메타 대비 약 15.5배 격차로 단가 효율 열위 지속. 키워드 단위로 보면 상위 키워드의 클릭률 변동이 작아 입찰가 인하 여지보다 매칭 키워드 확장 또는 노출 슬롯 정리가 더 큰 레버로 작용할 가능성. 신청 7건 중 분기점은 &#39;집단소송&#39; 직접 키워드와 브랜드 매칭 키워드로 추정되나 데이터 없음(소재별 전환 매핑 불가). 추정컨대 키워드 KPI 미부여 상태로는 SA 단독 ROAS 평가가 제한적.</div><div class="callout"><span class="title"><span class="tag ga">GA</span> 채널 진단</span>GA4 기준 총 사용자/세션 활동은 메타·네이버 트래픽 합산 흐름과 일치. 집단소송 신청 이벤트 시트 기준 5/17 총 사용자 수 45명을 단일 진실 출처로 사용. 채널별 분포(메타 30·네이버 7·Kakao 3·직접 2·기타 3)는 마지막 비직접 클릭 기준으로 추정. 참여율은 메타에서 하락세 확인되나 GA Raw 차원의 평균 세션 시간/이탈률은 데이터 없음(이번 회수에서 컬럼 슬라이스 미요청). 종합적으로 GA 측면에서는 채널 믹스가 메타 의존적이라 메타 피로도가 곧 전체 KPI 리스크.</div></div></div>
+  </table><div class="callout"><span class="title"><span class="tag meta">메타</span> 채널 진단</span>a</div><div class="callout"><span class="title"><span class="tag naver">네이버SA</span> 채널 진단</span>b</div><div class="callout"><span class="title"><span class="tag ga">GA</span> 채널 진단</span>c</div></div></div>
 <div class="section">
   <div class="section-header">
     <span class="sec-num">SECTION 04</span>
@@ -557,20 +557,10 @@ p { margin: 4px 0; }
     <span class="sec-subtitle">IF · THEN · BECAUSE</span>
   </div>
   <div class="section-body"><div class="callout">
-        <span class="title">메타 참여율 6일 연속 하락 = 크리에이티브 피로</span>
-        <strong>IF</strong> 메타 참여율이 D-5~D 6일 연속 하락하고 신청도 5/14 정점 후 정체<br>
-        <strong>THEN</strong> 기존 소재 노출 가중치를 줄이고 신규 크리에이티브 2~3종 A/B를 D+1에 투입해야 함<br>
-        <strong>BECAUSE</strong> 참여율 하락은 학습 알고리즘이 단가는 유지해도 액션률 저하를 보정하지 못한다는 신호이며, 신청 정체와 동시 발생하면 CPA 상승으로 전이될 가능성이 높기 때문
-      </div><div class="callout">
-        <span class="title">네이버SA 단가 격차는 매칭/슬롯 문제</span>
-        <strong>IF</strong> 네이버SA CPC가 메타 대비 약 15.5배(₩1,316 vs ₩85 추정컨대)이고 키워드별 CTR 변동이 작음<br>
-        <strong>THEN</strong> 입찰가 단순 인하보다 저효율 키워드 정리 + 매칭 폭 축소(확장→문구)로 단가 구조를 재설계해야 함<br>
-        <strong>BECAUSE</strong> CTR이 안정된 상황에서 CPC만 높다면 경쟁 입찰 손실이 아니라 &#39;광고 노출이 비효율 슬롯에 분산&#39;된 결과일 가능성이 크고, 키워드 KPI 미부여로 SA 단독 ROAS 검증이 불가능하므로 구조 정리가 선결조건
-      </div><div class="callout">
-        <span class="title">5/17 신규 머신러닝 25- 캠페인 = D+2~3 학습 변동성</span>
-        <strong>IF</strong> 5/15~16 캠페인 3종 종료 → 5/17 신규 머신러닝 25- 투입<br>
-        <strong>THEN</strong> 초기 2~3일은 CPC/CPA 모두 평소 대비 +20~40% 변동 추정컨대 정상 범위로 간주하고 학습 종료 후 평가<br>
-        <strong>BECAUSE</strong> 머신러닝 캠페인 학습 단계 동안 단가 변동성은 알고리즘의 정상 동작이며, 이 기간에 입찰가/예산을 자주 조정하면 학습 리셋이 일어나 효율이 더 악화될 수 있기 때문
+        <span class="title">t</span>
+        <strong>IF</strong> i<br>
+        <strong>THEN</strong> th<br>
+        <strong>BECAUSE</strong> b
       </div></div></div>
 <div class="section">
   <div class="section-header">
@@ -579,33 +569,13 @@ p { margin: 4px 0; }
     <span class="sec-subtitle">Priority · Channel · Due</span>
   </div>
   <div class="section-body"><table><thead><tr><th>우선순위</th><th>채널</th><th>실행 항목</th><th>실행 시점</th></tr></thead><tbody><tr>
-      <td><span class="tag p1">P1</span></td>
-      <td>메타</td>
-      <td>신규 크리에이티브 2~3종 A/B 셋업 — 기존 duo_700+story_260513·duo_10000_0427 효율 그룹은 유지, 참여율 하락 소재는 노출 가중치 50% 축소</td>
-      <td>D+1</td>
-    </tr><tr>
-      <td><span class="tag p1">P1</span></td>
-      <td>메타</td>
-      <td>5/17 신규 머신러닝 25- 캠페인 D+2~3 학습 안정화까지 입찰·예산 변경 금지, CPC/CPA 변동성 모니터링</td>
-      <td>D+1~D+3</td>
-    </tr><tr>
       <td><span class="tag p2">P2</span></td>
-      <td>네이버SA</td>
-      <td>저효율 키워드 정리 + 확장매칭→문구매칭 축소로 CPC 구조 재설계, 키워드 KPI 부여로 SA 단독 ROAS 측정 기반 구축</td>
-      <td>이번주</td>
-    </tr><tr>
-      <td><span class="tag p2">P2</span></td>
-      <td>GA/측정</td>
-      <td>네이버SA 키워드·소재별 전환 매핑 컬럼을 GA4 보고서에 추가(UTM 정합성 점검) — SA 평가 가능 상태 만들기</td>
-      <td>이번주</td>
-    </tr><tr>
-      <td><span class="tag p3">P3</span></td>
       <td>전체</td>
-      <td>메타 의존도 약 67%로 채널 집중 리스크, Kakao/기타 채널 테스트 예산 소액 배정 검토</td>
-      <td>다음주</td>
+      <td>t</td>
+      <td>d</td>
     </tr></tbody></table></div></div>
 <div class="footer">
-  에이아이컨실리움 | 법무법인 더 에이치 황해 — CONFIDENTIAL | 작성일 2026-05-19<span class="pgnum"></span>
+  에이아이컨실리움 | 법무법인 더 에이치 황해 — CONFIDENTIAL | 작성일 2026-05-20<span class="pgnum"></span>
 </div>
 </div>
 </body>
